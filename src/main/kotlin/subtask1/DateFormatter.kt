@@ -17,7 +17,7 @@ class DateFormatter {
             val date = LocalDate.of(yearInt, monthInt, dayInt)
             val localeRu = Locale("ru", "RU")
             val dayWeek = date.dayOfWeek.getDisplayName(TextStyle.FULL, localeRu)
-            val formatDate = date.format(DateTimeFormatter.ofPattern("dd MMMM, "))
+            val formatDate = date.format(DateTimeFormatter.ofPattern("dd MMMM, ", Locale("ru")))
             formatDate + dayWeek
         } catch (e: DateTimeException) {
             "Такого дня не существует"
